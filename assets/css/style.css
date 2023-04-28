@@ -1599,8 +1599,8 @@ section {
   -webkit-mask-size: cover;
   transition: background-color linear 1s;
   background-color: #59edff;
-  -webkit-mask-image: url(/assets/img/play-circle-svgrepo-com.svg);
-  mask-image: url(/assets/img/play-circle-svgrepo-com.svg);
+  -webkit-mask-image: url(../img/play-circle-svgrepo-com.svg);
+  mask-image: url(../img/play-circle-svgrepo-com.svg);
 
 }
 
