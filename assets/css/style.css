@@ -1568,3 +1568,48 @@ section {
   color: #fff;
   text-decoration: none;
 }
+
+#teste .active {
+  background-color: #59edff;
+  transition: all 1.0s;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.336);
+  transform: scale(1.025);
+  color: white;
+}
+
+#teste>div {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.336);
+}
+
+#teste h5::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  left: -25px;
+  object-fit: cover;
+  mask-position: center;
+  -webkit-mask-position: center;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-mode: alpha;
+  -webkit-mask-mode: alpha;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+  transition: background-color linear 1s;
+  background-color: #59edff;
+  -webkit-mask-image: url(/assets/img/play-circle-svgrepo-com.svg);
+  mask-image: url(/assets/img/play-circle-svgrepo-com.svg);
+
+}
+
+#teste h5 {
+  margin-left: 25px;
+  position: relative;
+
+}
+
+#teste .active h5::before {
+  background-color: white;
+}
