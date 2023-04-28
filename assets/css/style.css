@@ -1574,7 +1574,7 @@ section {
   transition: all 1.0s;
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.336);
   transform: scale(1.025);
-  color: white;
+  color: #fff;
 }
 
 #teste>div {
