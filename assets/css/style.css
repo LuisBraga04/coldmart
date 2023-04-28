@@ -1611,5 +1611,5 @@ section {
 }
 
 #teste .active h5::before {
-  background-color: white;
+  background-color: #fff;
 }
