@@ -100,7 +100,7 @@ function cadastrar(){
     msgError.innerHTML = ''
     
     setTimeout(()=>{
-        window.location.href = '/'
+      window.location.href = '../../index.html'
     }, 3000)
   
     
