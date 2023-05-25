@@ -54,7 +54,7 @@
           <li><a class="active" href="courses.html">Cursos</a></li>
           <li><a href="trainers.html">Professores</a></li>
           <li><a href="events.html">Eventos</a></li>
-          <li><a href="contact.html">Redes Sociais</a></li>
+          <li><a href="contact.html">Contato</a></li>
           <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
@@ -308,6 +308,13 @@
   </div>`;
         listaCursos.appendChild(cursoDiv);
       })
+    }
+  </script>
+
+  <script>
+    var usuarioLogado = localStorage.getItem("userLogado")
+    if (!usuarioLogado) {
+      window.location.href = '/signin.html'
     }
   </script>
 

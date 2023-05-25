@@ -376,6 +376,13 @@
   <h5>Schedule</h5>
   <p>5.00 pm - 7.00 pm</p>
   </div>
+
+  <script>
+    var usuarioLogado = localStorage.getItem("userLogado")
+    if (!usuarioLogado) {
+      window.location.href = '/signin.html'
+    }
+  </script>
 </body>
 
 </html>
