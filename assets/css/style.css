@@ -1633,3 +1633,9 @@ section {
   transition: 0.4s;
   border-radius: 50px;
 }
+
+#imagem-curso{
+  display: none;
+  width: 100%;
+  justify-content: center;
+}
