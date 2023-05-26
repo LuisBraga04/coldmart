@@ -1595,9 +1595,9 @@ section {
 }
 
 #teste {
-  max-height: 500px;
   overflow: auto;
   scroll-behavior: smooth;
+  position: relative;
 }
 
 #descricao-aula {

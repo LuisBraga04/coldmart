@@ -168,15 +168,15 @@
           <h1>Formulário de Curso</h1>
           <form class="php-email-form" action="javascript:void(0);">
             <div class="row">
-              <div class="col-md-12" style="margin-bottom:15px;">
+              <div class="col-md-12">
                 <div class="form-group">
-                  <label for="nome-curso">Nome do Curso:</label>
+                  <label for="nome-curso">Nome do Curso(<span id="tamanhoNomeCurso">0</span>/30):</label>
                   <input type="text" class="form-control" id="nome-curso" name="nomeCurso" required>
                 </div>
               </div>
               <div class="form-group">
-                <label for="nome-curso">Descrição do Curso:</label>
-                <textarea class="form-control" name="descricaoCurso" rows="5" required></textarea>
+                <label for="nome-curso">Descrição do Curso(<span id="tamanhoDescricaoCurso">0</span>/50):</label>
+                <input type="text" class="form-control" id="descricao-curso" name="descricaoCurso" required>
               </div>
               <div class="col-md-12" style="margin-bottom:15px;">
                 <div class="form-group">
@@ -313,6 +313,32 @@
     if (!usuarioLogado) {
       window.location.href = './signin.html'
     }
+
+    let tamanhoNomeCurso = document.getElementById('tamanhoNomeCurso');
+    let tamanhoNomeCursoInput = tamanhoNomeCurso.parentElement.nextElementSibling;
+    tamanhoNomeCursoInput.addEventListener('keyup', () => {
+      let t = tamanhoNomeCursoInput.value.length;
+      tamanhoNomeCurso.innerText = t;
+      if (t > 30)
+        tamanhoNomeCursoInput.classList.add('is-invalid');
+      else if (tamanhoNomeCursoInput.classList.contains('is-invalid') && t <= 50)
+        tamanhoNomeCursoInput.classList.remove('is-invalid');
+    })
+
+    let tamanhoDescricaoCurso = document.getElementById('tamanhoDescricaoCurso');
+    let tamanhoDescricaoCursoInput = tamanhoDescricaoCurso.parentElement.nextElementSibling;
+    console.log(tamanhoDescricaoCursoInput);
+    tamanhoDescricaoCursoInput.addEventListener('keyup', () => {
+      console.log('a')
+      let t = tamanhoDescricaoCursoInput.value.length;
+      tamanhoDescricaoCurso.innerText = t;
+      if (t > 50)
+      tamanhoDescricaoCursoInput.classList.add('is-invalid');
+      else if (tamanhoDescricaoCursoInput.classList.contains('is-invalid') && t <= 50)
+      tamanhoDescricaoCursoInput.classList.remove('is-invalid');
+    })
+
+
   </script>
 
 </body>

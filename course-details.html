@@ -97,20 +97,23 @@
     <section id="course-details" class="course-details">
       <div class="container" data-aos="fade-up">
 
-        <div class="row">
-          <div class="col-lg-8">
-            <!-- <img src="assets/img/course-details.jpg" class="img-fluid" alt=""> -->
-            <iframe id="iframetest"title="YouTube video player" frameborder="0" style="width: 100%;aspect-ratio: 5.5/3;height: auto;"
+        <div class="row" style="
+          display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;">
+          <div class="col-8">
+            <iframe id="iframetest" title="YouTube video player" frameborder="0"
+              style="width: 100%;aspect-ratio: 5.5/3;height: auto;"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen></iframe>
+          </div>
+          <div class="col-4" id="teste"></div>
+          <div class="col-12">
             <h3 id="nome-aula"></h3>
             <p id="descricao-aula">
             </p>
           </div>
-          <div class="col-lg-4" id="teste">
-          </div>
         </div>
-
       </div>
     </section><!-- End Cource Details Section -->
 
@@ -314,6 +317,11 @@
   <script src="assets/js/main.js"></script>
   <script src="js/jquery.min.js"></script>
   <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById('teste').style.height = `${document.querySelector('iframe').clientHeight}px`;
+    });
+  </script>
+  <script>
     var tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
     var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -371,12 +379,6 @@
       })
     });
   </script>
-  div style="cursor:pointer"
-  linkvideo="C_BOB4XdAPs">
-  <h5>Schedule</h5>
-  <p>5.00 pm - 7.00 pm</p>
-  </div>
-
   <script>
     var usuarioLogado = localStorage.getItem("userLogado")
     if (!usuarioLogado) {
