@@ -90,7 +90,7 @@
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs" data-aos="fade-in">
       <div class="container">
-        <h2>Fique por dentro de tud</h2>
+        <h2>Fique por dentro de tudo</h2>
         <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit
           quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
       </div>
@@ -166,36 +166,47 @@
 
         <body>
           <h1>Formulário de Curso</h1>
-          <form>
+          <form class="php-email-form" action="javascript:void(0);">
             <div class="row">
-              <div class="col-md-12" style="margin-bottom:15px;">
+              <div class="col-md-12">
                 <div class="form-group">
-                  <label for="nome-curso">Nome do Curso:</label>
-                  <input type="text" class="form-control" id="nome-curso" name="nome-curso" required>
+                  <label for="nome-curso">Nome do Curso(<span id="tamanhoNomeCurso">0</span>/30):</label>
+                  <input type="text" class="form-control" id="nome-curso" name="nomeCurso" required>
                 </div>
               </div>
-              <div class="col-md-6" style="margin-bottom:15px;">
-                <div class="form-group">
-                  <label for="quantidade-aulas">Quantidade de Aulas:</label>
-                  <input class="form-control" type="number" id="quantidade-aulas" name="quantidade-aulas" required>
-                </div>
-              </div>
-              <div class="col-md-6" style="margin-bottom:15px;">
-                <div class="form-group">
-                  <label for="nivel-curso">Nível do Curso:</label>
-                  <input type="number" class="form-control" id="nivel-curso" name="nivel-curso" min="1" max="5"
-                    required>
-                </div>
+              <div class="form-group">
+                <label for="nome-curso">Descrição do Curso(<span id="tamanhoDescricaoCurso">0</span>/50):</label>
+                <input type="text" class="form-control" id="descricao-curso" name="descricaoCurso" required>
               </div>
               <div class="col-md-12" style="margin-bottom:15px;">
                 <div class="form-group">
                   <label for="link-playlist">Link da Playlist do Curso:</label>
-                  <input class="form-control" type="url" id="link-playlist" name="link-playlist" required>
+                  <input class="form-control" type="url" id="link-playlist" name="linkPlaylist" required>
+                </div>
+              </div>
+              <div class="col-md-6 d-none" style="margin-bottom:15px;">
+                <div class="form-group">
+                  <label for="quantidade-aulas">Quantidade de Aulas:</label>
+                  <input class="form-control" type="number" id="quantidade-aulas" name="quantidadeAulas" disabled>
+                </div>
+              </div>
+              <div class="col-md-6 d-none" style="margin-bottom:15px;">
+                <div class="form-group">
+                  <label for="nivel-curso">Nível do Curso:</label>
+                  <input type="number" class="form-control" id="nivel-curso" name="nivelCurso" disabled>
                 </div>
               </div>
             </div>
             <div style="display: flex;">
               <input class="butao" type="submit" value="Enviar" style="margin: 0 auto ;">
+            </div>
+            <div id="imagem-curso">
+              <img src="">
+            </div>
+            <div class="my-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Curso Cadastrado com Sucesso!</div>
             </div>
           </form>
         </body>
@@ -302,6 +313,32 @@
     if (!usuarioLogado) {
       window.location.href = './signin.html'
     }
+
+    let tamanhoNomeCurso = document.getElementById('tamanhoNomeCurso');
+    let tamanhoNomeCursoInput = tamanhoNomeCurso.parentElement.nextElementSibling;
+    tamanhoNomeCursoInput.addEventListener('keyup', () => {
+      let t = tamanhoNomeCursoInput.value.length;
+      tamanhoNomeCurso.innerText = t;
+      if (t > 30)
+        tamanhoNomeCursoInput.classList.add('is-invalid');
+      else if (tamanhoNomeCursoInput.classList.contains('is-invalid') && t <= 50)
+        tamanhoNomeCursoInput.classList.remove('is-invalid');
+    })
+
+    let tamanhoDescricaoCurso = document.getElementById('tamanhoDescricaoCurso');
+    let tamanhoDescricaoCursoInput = tamanhoDescricaoCurso.parentElement.nextElementSibling;
+    console.log(tamanhoDescricaoCursoInput);
+    tamanhoDescricaoCursoInput.addEventListener('keyup', () => {
+      console.log('a')
+      let t = tamanhoDescricaoCursoInput.value.length;
+      tamanhoDescricaoCurso.innerText = t;
+      if (t > 50)
+      tamanhoDescricaoCursoInput.classList.add('is-invalid');
+      else if (tamanhoDescricaoCursoInput.classList.contains('is-invalid') && t <= 50)
+      tamanhoDescricaoCursoInput.classList.remove('is-invalid');
+    })
+
+
   </script>
 
 </body>
