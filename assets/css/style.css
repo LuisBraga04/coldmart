@@ -284,6 +284,10 @@ h6 {
     left: -90%;
   }
 
+  .image-user {
+    right: 40px !important;
+  }
+
   .navbar .dropdown .dropdown:hover>ul {
     left: -100%;
   }
