@@ -140,7 +140,10 @@ h6 {
 }
 
 #header .logo img {
-  max-height: 40px;
+  max-height: 80px;
+  position: absolute;
+  top: 2px;
+  left: 120px;
 }
 
 /**
